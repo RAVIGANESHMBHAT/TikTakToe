@@ -1,4 +1,3 @@
-alert("Yessss");
 // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyCs95pOO2eAgLtep3v7eaTrJJm1X1RXJ3U",
