@@ -478,41 +478,7 @@ nav {
   <!--<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>-->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCs95pOO2eAgLtep3v7eaTrJJm1X1RXJ3U",
-    authDomain: "chat-app-9abe7.firebaseapp.com",
-    databaseURL: "https://chat-app-9abe7.firebaseio.com",
-    projectId: "chat-app-9abe7",
-    storageBucket: "chat-app-9abe7.appspot.com",
-    messagingSenderId: "625053413425",
-    appId: "1:625053413425:web:bb022f1979ae03e4066510",
-    measurementId: "G-GC9QP143PT"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
-  // make auth and firestore references
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-
-    const database =firebase.database();
-    
-    // update firestore settings
-    //db.settings({ timestampsInSnapshots: true });
-
-  
-     
-     /*).then( function(snapshot) {
-        snapshot.forEach(function(childSnapshot){
-          var txt = childSnapshot.val().Text;
-          console.log(txt);
-        });
-   
-     });*/
-
-</script>
+<script src="configuration.js"></script>
  
   
   <!-- Compiled and minified JavaScript -->
