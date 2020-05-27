@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Connect Four </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTRIGt6nDMzRekANsR6xEUvLhbBzbZKva6ZVhjQOGWX5CX106Y&usqp=CAU">
-   
+  <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/game-guides-e45be.appspot.com/o/Images%2FDo%20not%20delete%2Fpassword.jpeg?alt=media&token=ac12bec4-47bf-4995-ad4c-cb488b65cab6">
+  <link rel="icon" href= style="width: 180px;height:55px; margin-top: 3px;"></a>
 
   <!-- for the social media icon -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -25,7 +24,7 @@ html, body {
 }
 #left {
   float: left;
-  width: 20%;
+  width: 40%;
   background: white;
   height: 100%;
   overflow-y: auto;
@@ -34,34 +33,31 @@ html, body {
 }
 #right {
   float: left;
-  width: 80%;
+  width: 60%;
   background: #FAE5D3  ;
   height: 90%;
   overflow-y: auto;
 }
 
 #sendMessageDiv{
-  width:80%;
+  width:60%;
   height:10%;
   position: absolute;
   bottom: 0;
- //padding-bottom:10px;
+ padding-bottom:10px;
  padding-left:15px;
 }
 #receiverName{
-  width:80%;
+  width:60%;
   height:10%;
   position: absolute;
   top: 50;
  padding-bottom:10px;
  padding-left:15px;
 }
-#senderName{
-  width:20%;
-  height:10%;
+#boxGameDiv{
+  width:60%;
   position: absolute;
-  top: 50;
- margin-bottom:15px;
 }
 
 i.icon-blue {
@@ -72,61 +68,7 @@ nav {
         line-height: 50px;
     }
 
-   </style>
-   <style>
-			.click_button {
-				height: 42px;
-				width: 42px;
-				border-radius: 24px;
-				background-color: rgba(255,0,0,1);
-				cursor: pointer;
-			}
-			
-			/* Make each piece square - 32x32, set the border-radius to 16px (so that it appears round) and center it using margin-left
-			and margin-right: auto */
-			.piece {
-				height: 25px;
-				width: 25px;
-				display:block;
-				border-radius: 50%;
-				margin-left: auto;
-				margin-right: auto;
-			}
-      
-			
-			/* Player 0 (no player) will have a light-grey background */
-			.player0 {
-				background-color: white; //#DDDDDD; /* hex colors were used, but rgb/rgba could be used as well */
-			}
-			
-			/* player 1 will have a red background */
-			.player1 {
-				background-color: #FF0000;
-			}
-			
-			/* player 2 will have a blue background */
-			.player2 {
-				background-color: #0000FF;	
-			}
-			
-			/* set the board square to having a dark-grey border, and to be 36x36 square */
-			.board_square {
-				//border: 0px solid #555555;
-				//height: 24px;
-				//width: 1px;
-			}
-      #game_table{
-        background:yellow;
-        border:2px solid black;
-        margin-left:5px;
-        width:260px;
-        height:260px;
-      }
-			 
-
 </style>
-
-
 </head>
 <body>    
         <!-- NAVBAR --> 
@@ -278,19 +220,12 @@ nav {
  
  
     <div id="left"> 
-       <div  id="senderName" style="height:60px;background:#E8E6E6;border:1px solid #D1D0D0;margin-bottom:15px;">
-         <b><p class="logged-out" style="font-size:100%;color:red;">User is not logged-in.</p></b>
-         <b><p class="logged-in" id="userInformation1" style="font-size:80%;word-wrap:break-word;"></p></b>
-         <p class="logged-in" id="userInformation2" style="font-size:50%;word-wrap:break-word;"></p>
-      </div>
-        <!--<header style="height:60px;background:#E8E6E6;border:1px solid #D1D0D0;position:absolute;width:100%;">
+        <header style="height:60px;background:#E8E6E6;border:1px solid #D1D0D0;">
         <b><p class="logged-out" style="font-size:100%;color:red;">User is not logged-in.</p></b>
          <b><p class="logged-in" id="userInformation1" style="font-size:80%;"></p></b>
-         <p class="logged-in" id="userInformation2" style="font-size:80%;"></p>
-        </header>-->
-        <div class="logged-in" id="friendList"><h5 style="background:#D0ECE7;word-wrap:break-word;margin-top:60px;">All Users</h5></div>
-        <div id="lists" class="logged-in"></div>
-        <div style="height:60px;"class="logged-in" ></div>
+         <p class="logged-in" id="userInformation2" style="font-size:60%;"></p>
+        </header>
+        <div class="logged-in" id="friendList"><h5 style="background:#D0ECE7;word-wrap:break-word;">All Users</h5></div>
      </div>
 
     <div id="right">
@@ -298,43 +233,23 @@ nav {
          <p class="logged-in" id="rName"></p>
          <p class="logged-in" id="rEmail"></p>
       </div>
-      <div style="height:70px;background:#FAE5D3;"></div>
-
+      <div  style="height:60px;background:#FAE5D3;"></div>
+      <div id="boxGameDiv" style="background:#FAE5D3;border-bottom:2px solid #00C39F;display:none;padding-left:15%;">
+        <input type="text" id="1" onKeyUp="storeInDatabase('1','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;">
+        <input type="text" id="2" onKeyUp="storeInDatabase('2','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;"> 
+        <input type="text" id="3" onKeyUp="storeInDatabase('3','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;"><br>
+        <input type="text" id="4" onKeyUp="storeInDatabase('4','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;">
+        <input type="text" id="5" onKeyUp="storeInDatabase('5','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;">
+        <input type="text" id="6" onKeyUp="storeInDatabase('6','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;"><br>
+        <input type="text" id="7" onKeyUp="storeInDatabase('7','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;">
+        <input type="text" id="8" onKeyUp="storeInDatabase('8','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;">
+        <input type="text" id="9" onKeyUp="storeInDatabase('9','+');" style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;"><br>
+        <p id="whoseTurn" style="padding-left:15px;">Turn : </p>
+        <button type="button" class="btn" onclick="storeInDatabase('','-');" style="margin-left:20px;margin-bottom:5px;">Clear all</button>
+      </div>
+      <div  style="height:230px;background:#FAE5D3;"></div>
       
-
-      
-		<div id="gameboard" style="display:none;">
-    <select id="firstPlayer"  onchange='addFirstPlayer(this.value);' style="display:block;width:260px;" >
-        <option value="" selected>Select the first Player</option>
-      </select>
-      <div id="frstPlr" style="padding-left:4px;">Player 1 :</div>
-			<!-- The game_info div allows game-specific information to easily be displayed -->
-			<div id="game_info" style="padding-left:4px;"></div>
-      
-			<table id="game_table">
-
-				<script> 
-        for(var row=0; row<=5; row++) {
-					document.writeln("<tr>");	
-					for (var col=0; col<=6; col++) {
-						//write each table data element - with the row and col variables in the ID so it can be accessed later.
-						document.writeln("<td id='square_" + row + "_"+ col +"' onclick='drop("+col+");'  class='board_square'></td>");							
-					}
-					//write the closing table row tag.
-					document.writeln("</tr>");	
-				}						
-										
-				</script>
-        
-			</table>
-      <button id="begin_game" class="btn red" onclick="doFunc();" style="display:none;">Clear All</button>
-			<!-- game_status is a place for the game to provide status updates. -->
-			<div id="game_status" ></div>
-    </div>
-
-
-     <div class="logged-in" id="showChat">
-     </div>
+     <div class="logged-in" id="showChat"></div>
       <div style="height:70px;background:#FAE5D3;"></div>
       <div class="logged-in" style="background:#F4F2F2;" id="sendMessageDiv">
      
@@ -346,29 +261,155 @@ nav {
    </div>
 
    <script>
-   function addFirstPlayer(email){
-     window.firstPlayerIs = email;
-      database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/FirstPlayer/').update({first_play:email});
-      database.ref('Connect4Game/'+db1+'/'+db2+'/ActivePlayerEmail/').update({active_play_email:email});
-      
-      setUpTurn();
-   }
-   function doFunc(){
-    storeInDatabase('','','',"-");
-    beginGame(); 
-    database.ref('Connect4Game/'+db1+'/'+db2+'/ActivePlayer') .update({active_play:1});
-    database.ref('Connect4Game/'+db1+'/'+db2+'/ActivePlayerEmail/').update({active_play_email:""});
-    database.ref('Connect4Game/'+db1+'/'+db2+'/FirstPlayer/').update({first_play:""});
-    document.getElementById("firstPlayer").disabled = false;
-    document.getElementById("game_info").innerHTML ="Current Player:";
-    document.getElementById("game_table").style.background ="yellow";
+   function storeInDatabase(id, key){
+       var emailSender = window.userIs.email.replace(/[^a-zA-Z0-9]/g, "");
+       var emailReceiver = window.toWhom.replace(/[^a-zA-Z0-9]/g, "");
+
+       var compare =  emailSender.localeCompare(emailReceiver);
+
+       var time = new Date().toString().slice(16,21);
+       if(compare == -1){
+         dbName1 = emailSender;
+         dbName2 = emailSender+'-'+emailReceiver;
+       }
+       else{
+         dbName1 = emailReceiver;
+         dbName2 = emailReceiver+'-'+emailSender;
+       }
+    if(key =="+"){
+      var value = document.getElementById(id).value;
+        
+       //var refGame = database.ref('TikTokToi/'+dbName1+'/'+dbName2);
+       var data2 = {
+              From : window.userIs.email,
+              Id : id,
+              Value : value.toUpperCase()
+           }
+          if(document.getElementById('whoseTurn').innerHTML == "Turn : You"){ 
+            if(value =='x' || value =='X' || value =='o' || value =='O'){
+              database.ref('TikTokToi/'+dbName1+'/'+dbName2+'/'+id).update(data2);
+              document.getElementById(id).disabled = true;
+            }
+            else{
+              M.toast({html:"Enter the correct option."});
+              document.getElementById(id).value = '';
+            }
+              
+          }
+          else{
+            M.toast({html:'It is not your turn.'});
+            document.getElementById(id).value = '';
+            //document.getElementById(id).disabled = false;
+          }
+           
+       //refGame.push(data2);
+     }
+     if(key == "-"){
+       database.ref('TikTokToi/'+dbName1+'/'+dbName2).remove();
+       for(var i=1;i<10;i++){
+        document.getElementById(i.toString()).value='';
+        document.getElementById(i.toString()).disabled = false;
+        if(dbName1 == window.userIs.email.replace(/[^a-zA-Z0-9]/g, "")){
+          document.getElementById('whoseTurn').innerHTML = "Turn : You";
+        }
+        else{
+          document.getElementById('whoseTurn').innerHTML = "Turn : Another Player";
+        }
+      }
+     }
+     callShowBox(dbName1,dbName2);
+     
    }
 
-   </script>
+   
+   function callShowBox(n1, n2){
+    var dbName1 = n1;
+    var dbName2 = n2;
+     database.ref('TikTokToi/'+dbName1+'/'+dbName2).on('value', snap =>{
+       //console.log(snap.val());
+       var c=0;
+       snap.forEach(function(childSnapshot){
+         c++;
+          var id = childSnapshot.val().Id;
+          var value = childSnapshot.val().Value;
+          console.log(id);
+          if(c%2 ==0){
+            if(dbName1 == window.userIs.email.replace(/[^a-zA-Z0-9]/g, "")){
+                document.getElementById('whoseTurn').innerHTML = "Turn : You";
+            }
+            else{
+              document.getElementById('whoseTurn').innerHTML = "Turn : Another Player";
+            }
+          }
+          else{
+            if(dbName1 != window.userIs.email.replace(/[^a-zA-Z0-9]/g, "")){
+                document.getElementById('whoseTurn').innerHTML = "Turn : You";
+            }
+            else{
+              document.getElementById('whoseTurn').innerHTML = "Turn : Another Player";
+            }
+          }
+          
+          document.getElementById(id).value = value;
+          document.getElementById(id).disabled = true;
+          if(value == "X"){
+             document.getElementById(id).style.color = "red";
+          }
+          else{
+            document.getElementById(id).style.color = "green";
+          }
+          
+        });
+        
+        var val1 = document.getElementById("1").value;
+        var val2 = document.getElementById("2").value;
+        var val3 = document.getElementById("3").value;
+        var val4 = document.getElementById("4").value;
+        var val5 = document.getElementById("5").value;
+        var val6 = document.getElementById("6").value;
+        var val7 = document.getElementById("7").value;
+        var val8 = document.getElementById("8").value;
+        var val9 = document.getElementById("9").value;
+        if(val1!='' && val1==val2 && val2==val3){
+          document.getElementById("whoseTurn").innerHTML = val1+" won the match.";
+        }
+        else if(val4!='' && val4==val5 && val5==val6){
+          document.getElementById("whoseTurn").innerHTML = val4+" won the match.";
+        }
+        else if(val7!='' && val7==val8 && val8==val9){
+          document.getElementById("whoseTurn").innerHTML = val7+" won the match.";
+        }
+        else if(val1!='' && val1==val4 && val4==val7){
+          document.getElementById("whoseTurn").innerHTML = val1+" won the match.";
+        }
+        else if(val2!='' && val2==val5 && val5==val8){
+          document.getElementById("whoseTurn").innerHTML = val2+" won the match.";
+        }
+        else if(val3!='' && val3==val6 && val6==val9){
+          document.getElementById("whoseTurn").innerHTML = val3+" won the match.";
+        }
+        else if(val1!='' && val1==val5 && val5==val9){
+          document.getElementById("whoseTurn").innerHTML = val1+" won the match.";
+        }
+        else if(val3!='' && val3==val5 && val5==val7){
+          document.getElementById("whoseTurn").innerHTML = val3+" won the match.";
+        }else if(val1=='' && val2=='' && val3=='' && val4=='' && val5=='' && val6=='' && val7=='' && val8=='' && val9==''){
+          //document.getElementById("whoseTurn").innerHTML = "Turn : ";
+        }
+        else if(val1!='' && val2!='' && val3!='' && val4!='' && val5!='' && val6!='' && val7!='' && val8!='' && val9!=''){
+           document.getElementById("whoseTurn").innerHTML = "Match is draw.";
+        }
+        else{
 
-   <script>
+        }
+     });
+     console.log(document.getElementById('whoseTurn').innerHTML);
+    
+     
+  }
    //var objDiv = document.getElementById("right");
     //objDiv.scrollTop = objDiv.scrollHeight;
+    window.count =0;
    window.toWhom ="";
      function addDataToDatabase(){
        var emailSender = window.userIs.email.replace(/[^a-zA-Z0-9]/g, "");
@@ -398,9 +439,33 @@ nav {
        reff.push(data1);   // reff.set(data1); will override the data
        document.getElementById('userText').value = "";
       }
-     
+     /* database.ref('LetsChat/'+dbName1+'/'+dbName2).on('value').then( function(snapshot) {
+        snapshot.forEach(function(childSnapshot){
+          var txt = childSnapshot.val().Text;
+          console.log(txt);
+        }).error(e =>{
+          console.log(e)
+        });
+   
+     });*/
+      
+      /*function gotData(data){
+        var cont = {};
+        var cont = data.val();
+        var keys = Object.keys(cont);
+        
+        for(var i=0; i<keys.length; i++){
+          var k = keys[i];
+          var txt = cont[k].Text;
+          console.log(txt);
+        }
+      }*/
+       
      }
-     
+     /* function testing(){
+       window.toWhom = document.getElementById('test').value;
+       console.log(window.toWhom);
+     }*/
 
      
    </script>
@@ -413,29 +478,7 @@ nav {
   <!--<script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>-->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCs95pOO2eAgLtep3v7eaTrJJm1X1RXJ3U",
-    authDomain: "chat-app-9abe7.firebaseapp.com",
-    databaseURL: "https://chat-app-9abe7.firebaseio.com",
-    projectId: "chat-app-9abe7",
-    storageBucket: "chat-app-9abe7.appspot.com",
-    messagingSenderId: "625053413425",
-    appId: "1:625053413425:web:bb022f1979ae03e4066510",
-    measurementId: "G-GC9QP143PT"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
-  // make auth and firestore references
-    const auth = firebase.auth();
-    const db = firebase.firestore();
-
-    const database =firebase.database();
-    
-
-</script>
+<script src="configuration.js"></script>
  
   
   <!-- Compiled and minified JavaScript -->
@@ -483,12 +526,14 @@ nav {
 
        // listen for auth status changes
 auth.onAuthStateChanged(user => {
+  console.log("state change");
   window.userIs=user;
     if (user) { //authorised user, but not confirmed the email
     db.collection('users').doc(user.uid).get().then(doc => {
         document.getElementById('userInformation1').innerHTML = doc.data().bio;
-        //document.getElementById('userInformation2').innerHTML = user.email;
+        document.getElementById('userInformation2').innerHTML = user.email;
         });
+    
          selectValues={};
             storageRef.child('/Images/'+window.userIs.email+'/').listAll().then(function(result){
         result.prefixes.forEach(function(imageRef){
@@ -508,11 +553,16 @@ auth.onAuthStateChanged(user => {
       });   
     console.log(user);
        setupUI(user); 
+  
       
     } else {
         setupUI();
     }
+
+    
+
   });
+
 
 // signup
 const signupForm = document.querySelector('#signup-form');
@@ -561,7 +611,6 @@ loginForm.addEventListener('submit', (e) => {
     M.Modal.getInstance(modal).close();
     loginForm.reset();
     loginForm.querySelector('.error').innerHTML = '';
-    location.reload();
   }).catch(err => {
     loginForm.querySelector('.error').innerHTML = err.message;
   });
@@ -595,6 +644,7 @@ resetPassForm.addEventListener('submit', (e) => {
   <script>
 
   function showChat(from, chat, time){
+    //console.log(time);
     var li = document.createElement('div');
     var timediv = document.createElement('div');
     if(from == window.userIs.email){
@@ -613,61 +663,38 @@ resetPassForm.addEventListener('submit', (e) => {
   function callShowChat(n1, n2){
     var dbName1 = n1;
     var dbName2 = n2;
-    //console.log("callahowchat");
-    //console.log(n1,n2);
      database.ref('LetsChat/'+dbName1+'/'+dbName2).on('value', snap =>{
-       //console.log(snap.val());
+       console.log(snap.val());
        document.querySelector("#showChat").innerHTML ="";
        snap.forEach(function(childSnapshot){
           var txt = childSnapshot.val().Text;
           var time = childSnapshot.val().Time;
           showChat(childSnapshot.val().From, txt, time);
+          //console.log(txt);
         });
      });
   }
   function reply_click(id){
-    //console.log(id);
+    document.getElementById("boxGameDiv").style.display ="block";
+    for(var i=1;i<10;i++){
+        document.getElementById(i.toString()).value='';
+        document.getElementById(i.toString()).disabled = false;
+      }
+
     db1 = id.substring(0, id.indexOf('@'));
     db2 = id.substring(id.indexOf('@')+1,id.indexOf('$'));
-    window.dbs1 = db1;
-    window.dbs2 = db2;
-    window.toWhoms = id.substring(id.indexOf('$')+1,id.indexOf('#'));
-     
-    document.getElementById("begin_game").style.display = "block";
-    document.getElementById("begin_game").setAttribute("style","margin-left:80px;margin-bottom:10px;");
-    document.getElementById("gameboard").style.display = "block";
-    
+    if(db1 == window.userIs.email.replace(/[^a-zA-Z0-9]/g, "")){
+        document.getElementById('whoseTurn').innerHTML = "Turn : You";
+    }
+    else{
+        document.getElementById('whoseTurn').innerHTML = "Turn : Another Player";
+    }
+    window.toWhom = id.substring(id.indexOf('$')+1,id.indexOf('#'));
     document.getElementById("rEmail").innerHTML = id.substring(id.indexOf('#')+1,);
-    database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/ActivePlayer').once('value', snap =>{
-           //console.log(snap.val());
-           if(snap.val() == null){
-             database.ref('Connect4Game/'+db1+'/'+db2+'/ActivePlayer/').update({active_play:1});
-           }
-        });
-    database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/ActivePlayer').once('value', snap =>{
-      if(snap.val() == null){
-         database.ref('Connect4Game/'+db1+'/'+db2+'/FirstPlayer/').update({first_play:""});
-         setUpTurn();
-      } 
-    });
-    $("#firstPlayer option:not(:first)").remove();
-    var x = document.getElementById('firstPlayer');
-    var opt1 = document.createElement('option');
-    opt1.text = window.userIs.email;
-    var opt2 = document.createElement('option');
-    opt2.text = window.toWhoms;
-    x.add(opt1);
-    x.add(opt2);
-
-    database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/FirstPlayer').on('value', snap =>{
-           player = snap.val().first_play;
-           document.getElementById("frstPlr").innerHTML = "Player 1 : "+player;
-           setUpTurn();
-        });
-    window.toWhom = window.toWhoms.replace(/[^a-zA-Z0-9]/g, "");
+    console.log(window.toWhom);
     callShowChat(db1,db2);
-    //beginGame();
     callShowBox(db1,db2);
+
   }
   var storageRef = firebase.storage().ref();
       // DOM elements
@@ -701,8 +728,7 @@ const setupUI = (user) => {
           var emailReceiver = doc.data().email.replace(/[^a-zA-Z0-9]/g, "");
 
            var compare =  emailSender.localeCompare(emailReceiver);
-           window.toWhoms = doc.data().email;
-          window.toWhom =emailReceiver;
+          //window.toWhom = emailReceiver;
           if(compare == -1){
             n1 = emailSender;
             n2 = emailSender+'-'+emailReceiver;
@@ -711,30 +737,31 @@ const setupUI = (user) => {
             n1 = emailReceiver;
             n2 = emailReceiver+'-'+emailSender;
          }
+         console.log(n1,n2);
            var li = document.createElement('div');
-           var uname = document.createElement('p');
-           var email = document.createElement('p');
+           var uname = document.createElement('div');
+           var email = document.createElement('div');
            //var newMsg = document.createElement('span');
-           
-           /*li.setAttribute("style","height:50px;border:4px solid #45B39D;border-radius:5px;padding-left:10px;margin-right:5px;cursor:pointer;margin-bottom:5px;");
-           */
-           li.setAttribute("style","border:4px solid #45B39D;border-radius:5px;padding-left:10px;cursor:pointer;margin-bottom:5px;");
-           li.setAttribute("id",n1+"@"+n2+"$"+doc.data().email+"#"+doc.data().bio);
+           li.setAttribute("style","height:50px;border:4px solid #45B39D;border-radius:5px;padding-left:10px;margin-right:5px;cursor:pointer;margin-bottom:5px;");
+           li.setAttribute("id",n1+"@"+n2+"$"+emailReceiver+"#"+doc.data().bio);
            li.setAttribute("class","usersNames");
            li.setAttribute("onMouseOver","this.style.background='#E8F8F5'");
            li.setAttribute("onMouseOut","this.style.background='#ffffff'");
            li.setAttribute("onclick","reply_click(this.id);");
-
-           uname.setAttribute("style","word-wrap:break-word; align:center;padding-right:5px;");
-           email.setAttribute("style","font-size:50%;word-wrap:break-word;align:center;padding-right:5px;");
+           //newMsg.setAttribute("class", "new badge");
+           //newMsg.setAttribute("id",n2);
+           //newMsg.textContent = 4;
+           email.setAttribute("style","font-size:50%;");
            uname.textContent = doc.data().bio;
            email.textContent =doc.data().email;
            li.appendChild(uname);
            li.appendChild(email);
-           document.getElementById("lists").appendChild(li);
+           //li.appendChild(newMsg);
            document.querySelector("#friendList").appendChild(li);
         }
+        
       });
+      //console.log(tempDoc)
     });
 
       } else {
@@ -759,316 +786,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
-<script type="text/javascript">
-			/* set the global variables so we can use them wihin functions */
-			var game_active = false; // this is a boolean (true/false values only).  This will be used to prevent being able to drop pieces once the game is over
-			var active_player = 0; // the # of the active player - 1 or 2.  Default is 0, meaning no active player
-			var active_player_email = "";
-      var gameboard = []; // define the gameboard as an array.  We will later set it up as a multi-dimensional array, to represent the col/row value for the game board
-			var player_color = []; //define player_color as an array
-			player_color[1] = "red"; //set the player_color for player 1 to "red" 
-			player_color[2] = "blue"; // set the player_color for player 2 to "blue"
-			
-			function beginGame() {
-                window.count=0;
-				if (game_active == true) return false; 
-
-				game_active = true; 
-				for (row=0; row<=5; row++) {
-					gameboard[row] = [];
-					for (col=0; col<=6; col++) {
-						gameboard[row][col] = 0;
-					}	
-				}		
-				drawBoard(); // call the function to draw the board.				
-				active_player = 1; //set the first player as their turn
-				setUpTurn(); //get ready for the player's turn
-			}
-			
-			/* drawBoard will draw the board - it will update each item to make sure it is the appropriate value */
-			function drawBoard() {
-				checkForWin(); //check to see if any player has won.
-				for (col = 0; col<=6; col++) {
-					for (row=0; row<=5; row++) {
-              document.getElementById('square_'+row+'_'+col).innerHTML ="<span class='piece player"+gameboard[row][col]+"'> </span>";
-					}	
-				}
-			}
-			
-			function checkForWin() {
-				for (i=1; i<=2; i++) {
-					for (col = 0; col <=3; col++) {
-						for (row = 0; row <=5; row++) {
-							if (gameboard[row][col] == i) {
-								if ((gameboard[row][col+1] == i) && (gameboard[row][col+2] == i) && (gameboard[row][col+3] == i)) {
-									endGame(i);//a match has been made, so run EndGame with the player that had the win
-									return true; //stop checking for a win - the game is over.
-								}
-							}
-						}
-					}
-				}
-				
-				//check top-to-bottom
-				for (i=1; i<=2; i++) {
-					//since a winning row must be 4 long, we only need to check the first 3 rows, 0,1,and 2
-					for (col = 0; col <=6; col++) {
-						for (row = 0; row <=2; row++) {
-							//check to see if the gameboard item is set to the player we are checking, if so, lets check the next 3 for a match
-							if (gameboard[row][col] == i) {
-								if ((gameboard[row+1][col] == i) && (gameboard[row+2][col] == i) && (gameboard[row+3][col] == i)) {
-									endGame(i); //a match has been made - run endGame for the player who had the match.
-									return true; //stop checking for a win - the game is over.
-								}
-							}
-						}
-					}
-				}
-				
-				//check diagnol down
-				for (i=1; i<=2; i++) {
-					//since a winning row must be 4 long, we only need to check the first 3 rows, 0,1,and 2
-					for (col = 0; col <=3; col++) {
-						//we also only need to check the bottom most columns - as the win must be upwards
-						for (row = 0; row <=2; row++) {
-							//check to see if the gameboard item is set to the player we are checking, if so, lets check the next 3 for a match
-							if (gameboard[row][col] == i) {
-								if ((gameboard[row+1][col+1] == i) && (gameboard[row+2][col+2] == i) && (gameboard[row+3][col+3] == i)) {
-									endGame(i);
-									return true;
-								}
-							}
-						}
-					}
-				}
-								
-				//check diagnol up
-				for (i=1; i<=2; i++) {
-					//since a winning row must be 4 long, we only need to check the first 3 rows, 0,1,and 2
-					for (col = 0; col <=3; col++) {
-						//we also only need to check the bottom most columns - as the win must be upwards
-						for (row = 3; row <=5; row++) {
-							//check to see if the gameboard item is set to the player we are checking, if so, lets check the next 3 for a match
-							if (gameboard[row][col] == i) {
-								if ((gameboard[row-1][col+1] == i) && (gameboard[row-2][col+2] == i) && (gameboard[row-3][col+3] == i)) {
-									endGame(i);
-									return true;
-								}
-							}
-						}
-					}
-				}
-			}
-			
-      
-			/* endGame will end the game - any additional functions or things you want to happen when the game is over can go here */
-			function endGame(winningPlayer) {
-				game_active = false; //set the "game_active" to false, so that it can be started again.
-                //alert("Winner: " + winningPlayer);
-       database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/FirstPlayer').on('value', snap =>{
-           first = snap.val().first_play;
-        });
-        if(winningPlayer==1){
-            if(first == window.userIs.email){
-              document.getElementById('game_info').innerHTML = "You Won." ;
-              document.getElementById("game_table").style.background ="#90B6F9";
-            }
-            else{
-              document.getElementById('game_info').innerHTML = "You Lost." ;
-              document.getElementById("game_table").style.background ="#90B6F9";
-            }
-        }
-        if(winningPlayer==2 ){
-          if(first == window.userIs.email){
-            document.getElementById('game_info').innerHTML = "You Lost." ;
-            document.getElementById("game_table").style.background ="#F694A9"; 
-          }
-          else{
-            document.getElementById('game_info').innerHTML = "You Won." ;
-            document.getElementById("game_table").style.background ="#F694A9";
-          }
-        }
-				 //set the "game_info" to the winner and the winning player #
-        window.count=1;
-        
-         
-      }
-			
-			/* setUpTurn will display who is the active player */
-			function setUpTurn() {
-				if (game_active) { //only run this is the game is active.
-					//display the current player, and create a <span> with the class of the player# so that it will show the color.
-          //console.log(window.activeIs);
-          database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/ActivePlayerEmail').once('value', snap =>{
-           //console.log(snap.val());
-           var act = snap.val().active_play_email;
-           //console.log(act, window.userIs.email);
-            if(act == window.userIs.email && window.count==0){
-            document.getElementById('game_info').innerHTML = "Current Player: Player " + active_player + " <span class='player"+active_player+"'>(" + player_color[active_player] + ")</span> (Your turn)"; 
-          }
-           if(act == window.toWhoms && window.count==0 ){
-             document.getElementById('game_info').innerHTML = "Current Player: Player " + active_player + " <span class='player"+active_player+"'>(" + player_color[active_player] + ")</span> (Other player)";
-           } 
-            
-
-          });
-          
-					
-				}
-			}	
-
-      
-
-      function callShowBox(n1, n2){
-        window.count = 0;
-        for (row=0; row<=5; row++) {
-					gameboard[row] = [];
-					for (col=0; col<=6; col++) {
-						gameboard[row][col] = 0;
-					}	
-				}	
-        game_active = true;
-        drawBoard();
-        database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/ActivePlayer').on('value', snap =>{
-           active_player = snap.val().active_play;
-           setUpTurn(); //display who is the active player
-        });
-        var dbName1 = n1;
-        var dbName2 = n2;
-        database.ref('Connect4Game/'+dbName1+'/'+dbName2+'/moves').on('value', snap =>{
-       //console.log(snap.val());
-       snap.forEach(function(childSnapshot){
-         document.getElementById("firstPlayer").disabled = true;
-          var row = childSnapshot.val().row;
-          var col = childSnapshot.val().col;
-          var activePlay = childSnapshot.val().activeplayer;
-          //console.log(gameboard);
-          gameboard[row][col] = activePlay;
-
-          drawBoard();
-          
-       });
-       
-      });
-      }
-      
-      window.userDropped = 0;
-			/* drop will add a piece to the lowest available column */
-			function drop(col) {
-        if(window.count ==0){
-          console.log(window.track);
-           database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/FirstPlayer').on('value', snap =>{
-           //console.log(snap.val());
-           var first = snap.val().first_play;
-        });
-        database.ref('Connect4Game/'+dbs1+'/'+dbs2+'/ActivePlayerEmail').once('value', snap =>{
-           //console.log(snap.val());
-           try{
-               var active = snap.val().active_play_email;
-               window.activeIs = active;
-           }
-           catch{
-             alert("Please select the Player 1");
-           }
-           if(active == window.userIs.email && document.getElementById("frstPlr").innerHTML !=""){
-            if(window.userDropped == 0){
-              window.userDropped++;
-               for (row=5; row>=0; row--) { //note: we are using row--, which will reduce the value of row by 1, the opposted of ++
-						    if (gameboard[row][col] == 0) {
-							  //set the empty row to the active player's number
-							  gameboard[row][col] = active_player;
-                storeInDatabase(row,col,active_player,"+");
-                callShowBox(window.dbs1, window.dbs2);
-							  drawBoard(); // draw the board.
-							//change the active players turn:
-							if (active_player == 1) {
-								active_player = 2;
-							} else {
-								active_player = 1;
-							}
-              if(active == window.userIs.email){
-                active_play_emails = window.toWhoms
-              }
-              else{
-                active_play_emails = window.userIs.email
-              }
-              database.ref('Connect4Game/'+db1+'/'+db2+'/ActivePlayer/').update({active_play:active_player});
-              database.ref('Connect4Game/'+db1+'/'+db2+'/ActivePlayerEmail/').update({active_play_email:active_play_emails});
-							//there is also a fancy way of doing this call a ternary assignment that looks like this: active_player = (active_player == 1) ? 2 : 1;
-							
-							setUpTurn(); //display who is the active player
-                
-							//stop looking for empty spaces
-							return true;
-						 }
-             
-					}
-
-
-            } 
-            
-           }
-        });
-
-				  
-       }
-		 }
-		function storeInDatabase(row,col,activePlayer, key){
-      
-       var emailSender = window.userIs.email.replace(/[^a-zA-Z0-9]/g, "");
-       var emailReceiver = window.toWhom.replace(/[^a-zA-Z0-9]/g, "");
-
-       var compare =  emailSender.localeCompare(emailReceiver);
-
-       var time = new Date().toString().slice(16,21);
-       if(compare == -1){
-         dbName1 = emailSender;
-         dbName2 = emailSender+'-'+emailReceiver;
-       }
-       else{
-         dbName1 = emailReceiver;
-         dbName2 = emailReceiver+'-'+emailSender;
-       }
-    if(key =="+"){
-      //var value = document.getElementById(id).value;
-        
-       //var refGame = database.ref('TikTokToi/'+dbName1+'/'+dbName2);
-       var data2 = {
-              From : window.userIs.email,
-              row : row,
-              col : col,
-              activeplayer : activePlayer
-           }
-           database.ref('Connect4Game/'+dbName1+'/'+dbName2+'/moves/'+row.toString()+col.toString()).update(data2).then( function(){
-             window.userDropped = 0; // it is to prevent the user to click twice at a time before the data is updated into database.
-           });
-     }
-     if(key == "-"){
-       database.ref('Connect4Game/'+dbName1+'/'+dbName2+'/moves').remove();
-       /*for(var i=1;i<10;i++){
-        document.getElementById(i.toString()).value='';
-        document.getElementById(i.toString()).disabled = false;
-        if(dbName1 == window.userIs.email.replace(/[^a-zA-Z0-9]/g, "")){
-          document.getElementById('whoseTurn').innerHTML = "Turn : You";
-        }
-        else{
-          document.getElementById('whoseTurn').innerHTML = "Turn : Another Player";
-        }
-      }*/
-     }
-     //callShowBox(dbName1,dbName2);
-     callShowBox(window.dbs1, window.dbs2);
-   }	
-
-		</script>
-
-    
-
 <script>
     function logouts(){
       document.querySelector("#friendList").innerHTML = "";
-      document.getElementById("begin_game").innerHTML = "";
-    document.getElementById("gameboard").innerHTML = "";
+      for(var i=1;i<10;i++){
+        document.getElementById(i.toString()).value='';
+      }
+      document.getElementById('whoseTurn').innerHTML = "Turn : "
      auth.signOut();
         
   }
