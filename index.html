@@ -246,7 +246,7 @@
         <p class="logged-in" id="rEmail"></p>
     </div>
     <div style="height:60px;background:#FAE5D3;"></div>
-    <div id="boxGameDiv" style="background:#FAE5D3;border-bottom:2px solid #00C39F;display:none;padding-left:15%;">
+    <div id="boxGameDiv" style="background:#FAE5D3;border-bottom:2px solid #00C39F;display:none;padding-left:25%;padding-top: 1%;padding-bottom: 1%;">
         <input type="text" id="1" onKeyUp="storeInDatabase('1','+');"
                style="width:20px;border:4px solid black;border-radius:5px;margin-right:3px;padding-left:10px;height:20px;font-weight:bold;">
         <input type="text" id="2" onKeyUp="storeInDatabase('2','+');"
@@ -436,8 +436,9 @@
 
         var compare = emailSender.localeCompare(emailReceiver);
 
-        var time = new Date().toString().slice(16, 21);
-        if (compare == -1) {
+        var time = new Date().toString().slice(0, 21);//.slice(16, 21);
+        let dbName1, dbName2
+        if (compare === -1) {
             dbName1 = emailSender;
             dbName2 = emailSender + '-' + emailReceiver;
         } else {
@@ -663,12 +664,12 @@
         //console.log(time);
         var li = document.createElement('div');
         var timediv = document.createElement('div');
-        if (from == window.userIs.email) {
+        if (from === window.userIs.email) {
             li.setAttribute("style", "font-size:70%;width:70%;padding-left:10px;margin-bottom:15px;margin-left:auto;margin-right:10%;background:#F7DC6F;margin-right:10px;border-radius:5px;");
         } else {
             li.setAttribute("style", "font-size:70%;width:70%;padding-left:10px;margin-bottom:15px;margin-left:5%;margin-right:auto;background:white;margin-right:10px;border-radius:5px;");
         }
-        timediv.setAttribute("style", "padding-left:80%;font-size:10px;");
+        timediv.setAttribute("style", "padding-left:78%;padding-bottom: 4px;font-size:10px;");
         timediv.textContent = time;
         li.textContent = chat;
         li.appendChild(timediv);
